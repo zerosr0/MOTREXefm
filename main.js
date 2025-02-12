@@ -20,7 +20,6 @@ function activation(index) {
 
 function rolling() {
   panel_num < len ? panel_num++ : (panel_num = 0);
-  panel_num < len_m ? panel_num++ : (panel_num = 0);
   activation(panel_num);
 }
 
