@@ -22,9 +22,12 @@ header {
 header h1 {
   width: 100%;
   height: 70px;
-  padding: 15px 0 15px 22px;
+  padding: 11px 0 11px 22px;
 }
 
+header h1 img {
+  height: 48px;
+}
 
 /* 중간 배경이미지 부분 */
 .container {
@@ -36,7 +39,7 @@ header h1 {
 }
 
 /* 로그인 박스 */
-.container .logSection {
+.loginBgCon {
   position: absolute;
   top: 20%;
   right: 10%;
@@ -54,40 +57,30 @@ header h1 {
   z-index: 5;
 }
 
-/* 배경이미지 왼쪽 문구 */
-h3 {
-  position: absolute;
-  top: 33%;
-  left: 5%;
-  font-weight: 900;
-  color: #fff;
-  font-size: 50px;
-}
-
-.container .logSection .loginContainer {
+.loginBgCon .loginContainer {
   position: relative;
   margin: 50px auto;
 }
 
-.container .logSection .loginContainer::after {
+.loginBgCon .loginContainer::after {
   display: block;
   content: "";
   clear: both;
 }
 
-.container .logSection .loginContainer h2 {
+.loginBgCon .loginContainer h2 {
   font-size: 25px;
   margin-bottom: 15px;
   color: #000;
 }
 
-.container .logSection .loginContainer .loginSection {
+.loginBgCon .loginContainer .loginSection {
   margin-left: 15%;
   width: 70%;
   margin-bottom: 5px;
 }
 
-.container .logSection .loginContainer .loginSection input {
+.loginBgCon .loginContainer .loginSection input {
   width: 100%;
   height: 35px;
   padding-left: 10px;
@@ -96,11 +89,11 @@ h3 {
   border: none;
 }
 
-.container .logSection .loginContainer .loginSection input::placeholder {
+.loginBgCon .loginContainer .loginSection input::placeholder {
   font-size: 15px;
 }
 
-.container .logSection .loginContainer .loginBtn {
+.loginBgCon .loginContainer .loginBtn {
   width: 100%;
   height: 36px;
   background-color: #30A338;
@@ -114,17 +107,17 @@ h3 {
   transition: 0.3s;
 }
 
-.container .logSection .loginContainer .loginBtn:hover {
+.loginBgCon .loginContainer .loginBtn:hover {
   background-color: #51555f;
 }
 
-.container .logSection .loginContainer .idSet {
+.loginBgCon .loginContainer .idSet {
   width: 100%;
   float: left;
   margin-bottom: 20px;
 }
 
-.container .logSection .loginContainer .idSet label span {
+.loginBgCon .loginContainer .idSet label span {
   color: #05065c;
   font-size: 14px;
   letter-spacing: 1px;
@@ -132,28 +125,28 @@ h3 {
   font-weight: normal;
 }
 
-.container .logSection .loginContainer .idSet label span:hover {
+.loginBgCon .loginContainer .idSet label span:hover {
   color: #3c4646;
 }
 
-.container .logSection .loginContainer .idSet label span:hover.saveId::after {
+.loginBgCon .loginContainer .idSet label span:hover.saveId::after {
   color: #05065c;
 }
 
-.container .logSection .loginContainer .idSet label span input {
+.loginBgCon .loginContainer .idSet label span input {
   margin-right: 5px;
   border: 1px solid #3c4646;
   vertical-align: middle;
 }
 
-.container .logSection .loginContainer .idSet label span.saveId::after {
+.loginBgCon .loginContainer .idSet label span.saveId::after {
   content: "|";
   display: inline-block;
   padding-left: 15px;
   padding-right: 10px;
 }
 
-.container .logSection .loginContainer .idSet span {
+.loginBgCon .loginContainer .idSet span {
   color: #05065c;
   font-size: 14px;
   letter-spacing: 1px;
@@ -161,34 +154,45 @@ h3 {
   font-weight: normal;
 }
 
-.container .logSection .loginContainer .idSet span:hover {
+.loginBgCon .loginContainer .idSet span:hover {
   color: #3c4646;
 }
 
-.container .logSection .loginContainer .idSet span:hover.saveId::after {
+.loginBgCon .loginContainer .idSet span:hover.saveId::after {
   color: #3c4646;
 }
 
-.container .logSection .loginContainer .idSet span img {
+.loginBgCon .loginContainer .idSet span img {
   width: 15px;
   height: 15px;
   vertical-align: middle;
   margin-right: 5px;
 }
 
-.container .logSection .loginContainer .notice {
+.loginBgCon .loginContainer .notice {
   font-size: 12px;
   font-weight: 400;
   margin: 30px;
   color: #000;
 }
 
-.container #frame {
+/* 배경이미지 왼쪽 문구 */
+h3 {
+  position: absolute;
+  top: 33%;
+  left: 5%;
+  font-weight: 900;
+  color: #fff;
+  font-size: 50px;
+}
+
+
+#frame {
   position: relative;
   height: 100%;
 }
 
-.container #frame .panel {
+#frame .panel {
   position: absolute;
   top: 0;
   left: 0;
@@ -197,48 +201,18 @@ h3 {
   overflow: hidden;
 }
 
-.container #frame .panel li {
+#frame .panel li {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.container #frame .panel li.on img {
+#frame .panel li.on img {
   opacity: 1;
   transform: scale(1.02);
 }
 
-.container #frame .panel li img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transform: scale(1);
-  transition: opacity 0.5s, transform 4s;
-}
-
-.container #frame .panel-mobile {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.container #frame .panel-mobile li {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.container #frame .panel-mobile li.on img {
-  opacity: 1;
-  transform: scale(1.01);
-}
-
-.container #frame .panel-mobile li img {
+#frame .panel li img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -259,12 +233,8 @@ footer p {
 }
 
 @media screen and (max-width: 1700px) {
-  .login-container .logSection {
+  .loginBgCon {
     width: 30%;
-  }
-
-  .login-container .logSection .loginHeader {
-    width: 263px;
   }
 
 }
@@ -272,43 +242,61 @@ footer p {
 @media screen and (max-width: 1500px) {
   header h1 {
     width: 100%;
-    height: 80px;
-    padding: 15px 0 15px 15px;
+    height: 55px;
+    padding: 8px 0 8px 18px;
   }
 
-  .login-container .logSection {
+  header h1 img {
+    height: 39px;
+  }
+
+  .container {
+    height: calc(100vh - 55px - 64px);
+  }
+
+  .loginBgCon {
     width: 35%;
   }
 
-  .login-container .logSection .loginContainer {
+  .loginBgCon .loginContainer {
     width: 65%;
+  }
+
+  .loginBgCon .loginContainer .notice {
+    margin: 0;
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .login-container .logSection {
+  .loginBgCon {
     width: 40%;
+    transform: translateX(-50%);
   }
 
-  .login-container #frame .panel {
+  .loginBgCon .loginContainer {
+    margin: 30px 0px;
+  }
+
+  .loginBgCon .loginContainer .loginSection {
+    width: 100%;
+    margin-left: 0%;
+  }
+
+  h3 {
     display: none;
-  }
-
-  .login-container #frame .panel-mobile {
-    display: block;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .login-container .logSection {
+  .loginBgCon {
     width: 65%;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 40px;
   }
 
-  .login-container .logSection .loginContainer {
-    width: 90%;
+  .loginBgCon .loginContainer {
+    margin: 10px 0;
   }
 
   footer p {
@@ -317,11 +305,15 @@ footer p {
 }
 
 @media screen and (max-width: 550px) {
-  .login-container .logSection {
+  .container {
+    height: calc(100vh - 55px - 74px);
+  }
+
+  .loginBgCon {
     width: 90%;
   }
 
-  .login-container .logSection .loginContainer {
+  .loginBgCon .loginContainer {
     width: 95%;
   }
 
